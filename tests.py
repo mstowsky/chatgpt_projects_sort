@@ -71,9 +71,6 @@ class ChatGPTTests:
 
         page = self.chatgpt.page
 
-        print("URL:", page.url)
-        print("Title:", page.title())
-        print()
         print("Элементы <main>:", page.locator("main").count())
         print("Элементы <article>:", page.locator("article").count())
         print()

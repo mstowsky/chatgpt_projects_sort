@@ -29,9 +29,9 @@ def main():
         # 4. Открываем ChatGPT
         chatgpt.open()
 
-        # 5. Запускаем временный тест
+        # 5. Запускаем тест
         tests = ChatGPTTests(chatgpt)
-        tests.test_chatgpt_input_field()
+        tests.test_chat_structure()
 
         # 6. Информация
         print()
