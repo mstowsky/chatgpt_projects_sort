@@ -2,6 +2,7 @@
 # ВРЕМЕННЫЕ ТЕСТЫ
 # ============================================================
 
+import inspect
 
 class ChatGPTTests:
 
@@ -9,26 +10,17 @@ class ChatGPTTests:
 
         self.chatgpt = chatgpt_page
 
-    # ========================================================
-    # ТЕСТ ПОЛЯ ВВОДА CHATGPT
-    # ========================================================
-
+    # Тест поля ввода ChatGPT
     def test_chatgpt_input_field(self):
-        """
-        Проверяет работу с полем ввода ChatGPT.
-        """
+        current_test_name = inspect.currentframe().f_code.co_name
 
         print()
-        print("ChatGPTTests: начинаю тест")
+        print(f"ChatGPTTests: начинаю тест {current_test_name}")
         print("-" * 50)
-
         print("URL:", self.chatgpt.page.url)
         print("Title:", self.chatgpt.page.title())
 
-        # ----------------------------------------------------
         # Находим поле ввода
-        # ----------------------------------------------------
-
         textbox = self.chatgpt.textbox
 
         count = textbox.count()
@@ -41,16 +33,10 @@ class ChatGPTTests:
                 "Поле ввода ChatGPT не найдено."
             )
 
-        # ----------------------------------------------------
         # Берём первое найденное поле
-        # ----------------------------------------------------
-
         textbox = textbox.first
 
-        # ----------------------------------------------------
         # Получаем placeholder
-        # ----------------------------------------------------
-
         placeholder = self.chatgpt.actions.get_attribute(
             textbox,
             "placeholder"
@@ -58,25 +44,18 @@ class ChatGPTTests:
 
         print("Placeholder:", placeholder)
 
-        # ----------------------------------------------------
         # Устанавливаем фокус
-        # ----------------------------------------------------
-
         self.chatgpt.actions.focus(textbox)
 
         print("Фокус установлен на поле ввода.")
 
-        # ----------------------------------------------------
         # Вводим символ "1"
-        # ----------------------------------------------------
-
         self.chatgpt.actions.fill(
             textbox,
             "1"
         )
 
         print('В поле ввода введён символ "1".')
-
         print("-" * 50)
-        print("ChatGPTTests: тест завершён")
+        print(f"ChatGPTTests: тест {current_test_name} завершён")
         print()
