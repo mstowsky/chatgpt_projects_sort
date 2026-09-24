@@ -96,7 +96,7 @@ pages/chatgpt_page.py - Page Object конкретной страницы ChatGP
 
 ---
 
-## 6. CURRENT GOAL
+## 6. CURRENT GOAL STEP
 Сейчас мы находимся на этапе "Шаг 0. Подготовить каркас программы: структуру папок, файлов, классов, методов.".
 
 ## 7. CURRENT TASK
